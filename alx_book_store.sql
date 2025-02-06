@@ -1,3 +1,13 @@
+import mysql.connector
+
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="yourusername",
+    password="Saintamanuel@28",
+    database="mydb"
+)
+
 CREATE DATABASE alx_book_store;
 USE alx_book_store;
 
