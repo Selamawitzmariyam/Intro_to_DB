@@ -7,6 +7,30 @@ mydb = mysql.connector.connect(
     password="Saintamanuel@28",
     database="mydb"
 )
+try:
+    # Establish connection to MySQL
+    conn = mysql.connector.connect(
+        host="localhost",
+        user="root",
+        password="yourpassword",
+        database="alx_book_store"
+    )
+
+    cursor = conn.cursor()
+
+ 
+    cursor.execute("SHOW TABLES")
+    for table in cursor:
+        print(table)
+
+except mysql.connector.Error as err:
+    print(f"Error: {err}")
+
+finally:
+    # Close connection only if it's open
+    if 'conn' in locals() and conn.is_connected():
+        cursor.close()
+        conn.close()
 CREATE DATABASE IF NOT EXISTS alx_book_store;
 USE alx_book_store;
 
